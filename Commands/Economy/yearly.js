@@ -1,0 +1,22 @@
+const { ButtonBuilder, EmbedBuilder, ActionRowBuilder, SelectMenuBuilder } = require("discord.js");
+const name = require("../../Modules/Includes/commands/path");
+module.exports = {
+    name: name.parse(__filename).name,
+    usage: `${name.parse(__filename).name}`,
+    aliases: ["", ""], // lệnh phụ
+    description: "lấy tiền hàng năm của bạn", // mô tả lệnh
+    userPerms: [], // Administrator, ....
+    owner: false, //: tắt // true : bật
+    category:"Economy", // tên folder chứa lệnh
+    cooldown: 5, // thời gian có thể tái sử dụng lệnh
+    run: async(client, message, args, prefix, database, emoji, language) => {
+        let result = await client.cs.yearly({
+        user: message.author,
+        guild: { id : null },
+        amount: 100000,
+
+       });
+       if (result.error) return message.reply({ content: `${client.i18n.get(language, "economy", "thulaisau_money")} \`${result.time}\`` });
+       else message.reply({ content: `${client.i18n.get(language, "economy", "xintienthanhcong")} ${emoji.money} \`${await client.cs.format(result.amount)}.\`` })
+    },
+};
