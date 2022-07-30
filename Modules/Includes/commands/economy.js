@@ -183,7 +183,7 @@ class CurrencySystem {
 
 };
 
-Object.assign(CurrencySystem.prototype, require('./functionsEconomy'))
+Object.assign(CurrencySystem.prototype, require('../odd_files/FunctionsEconomy'))
 module.exports = CurrencySystem;
 
 function _getDbURL() {

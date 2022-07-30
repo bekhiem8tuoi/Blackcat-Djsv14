@@ -75,7 +75,7 @@ module.exports = (client) = {
     };
   },
 /**
-  *
+  * events corona commands
 **/
   random: function(options) {
     var numberOfEmojis = options.count;
@@ -149,7 +149,7 @@ module.exports = (client) = {
         };
   },
 /**
-  * 
+  * lấy thông tin user và tất cả user
 **/
   GetUser: function(message, arg){
     var errormessage = ":x: Tôi không tìm thấy thành viên đó...";
