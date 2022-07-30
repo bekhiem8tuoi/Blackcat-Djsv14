@@ -1,0 +1,101 @@
+thamgiakenhvoicecuatoi: "Please join my voice channel"
+haythamgiavoicetruoc: "Please join the voice channel before using the command"
+kenhvoicedaytoikhongthetamgia: "Your voice channel is full, I can't join"
+toidangduocketnoionoikhac: "I was connected somewhere else"
+danhsachtrong: "I'm not singing any songs right now"
+dj_roles: "You are not a DJ and you are not a Song Requester"
+error: "An error has occurred:"
+sudunglenh: "Use:"
+# addrelated
+timkiembaihatcmds: "%{emojidongcmds} Search related songs for... **${timkiemnhacfhhshdjxjshd}**"
+dathemnhacdkfjjfjddjjd: "👍 add: **%{dathembaihatmoi}**"
+# autoplay
+dj_roles2: "You are not a DJ and you are not a Song Requester!\n> ${dj_roles1}`"
+autoplay_success: "**%{autoplaycmds} Autoplay!**\n> 👑 **YC**: `${duocyeucauboi}`"
+#autoensure
+bat: "Turn on"
+tat: "Turn off"
+# clearms
+clearms: "🗑 **Queue cleared and cleared: %{amount} song!**\n> 💢 **YC**: `%{fjjdjdjdjdjdjdj}`"
+# forward
+forward: "⏩ **Forwarded song for `%{seekNumber} Second`!**\n> 💢 **Yc**: `%{djfjjdjdj}`"
+forward2: "I have nothing to sing right now!\nUse: > `${prefixcta}forward <Duration in seconds>`"
+# grab
+autoplayzzz: "Autoplay:"
+daphattrong: "Played in: "
+check_tinnhan: "%{Meow} **Check your messages!**"
+khongthenhantin: "%{Meow2} **I can't text you!**"
+# jump
+jump_vitri: "**Please add a location to go to!**"
+jump_vitri1: "**The position must be between `0` and `%{jump_vitricmds}`!**"
+jump_vitri2: "`👌 **Jumped to the `%{baihatthu}` th song in the Queue!**\n> 🐲 **YC bởi**: `%{thanhvienyeucaubaihat_jump}`"
+# list 
+list_dungdau: "📑 **Top %{list_thesong} | Queue %{guild_name}**"
+list_dungdau1: "**Current song:**\n> [`%{list_baihathientai0}`](%{list_baihathientai1})\n\n%{list_baihathientai2}"
+list_dungdau2: "%{blackcatdata}\n%{list_baihathientai3} Songs in the queue | Period: %{list_baihathientai4}"
+list_dungdau3: "Choose a page"
+list_dungdau4: "Page:"
+list_dungdau5: "Shows %{index}/%{list_baihathientai5} Page!"
+# loop
+loop_1: "**Please add valid options!**"
+loop_2: "**Loop mode disabled!**\n> **YC**: `%{loop_member}`"
+loop_3: "**Song loop enabled** ||(Disabled **Queue - Loop**)||\n> **YC**: `%{loop_member1}`"
+loop_4: "**Queue loop enabled!** ||(Disabled **Song - Loop**)||\n> **YC**: `${loop_member2}`"
+# lyrics
+lyrics_1: "Song not found!"
+lyrics_2: "Too long to show, visit [https://popcat.xyz/lyrics/%{url1}](https://popcat.xyz/lyrics/%{url2}) For full lyrics"
+lyrics_3: "Not available"
+# move
+move_vitri0: "**Please add song location!**"
+move_vitri1: "**Use:**\n> `%{tientocuabot}move <Song location> <Go to the desired location>`"
+move_vitri3: "**Please add number to move location!**"
+move_vitri4: "**Please add a Number Position Song!**"
+move_vitri5: "**This song doesn't exist!**"
+move_vitri6: "**Last Song in an Indexed Queue: "
+move_vitri7: "**Can't move the song before it plays!**"
+move_vitri8: "📑 Delivered **%{move_vitri9}** arrive **`%{move_vitri10}`** right after **_%{move_vitri11}_!**"
+# nowplaying
+nowplay_0: "no music"
+nowplay_1: "empty playlist"
+nowplay_3: "There has been no song yet"
+# play
+play_0: "**Please add song name to Search!**"
+play_1: "**Use:**\n> `%{play_prefix}play <Song Name/Link>`"
+play_2: "%{play_emoji} Searching... ```%{play_Text}```"
+play_3: "Searching"
+play_4: "Now playing"
+# playskip
+playskip_1: "**Use:**\n> `%{playskip1_prefix}playskip <Song Name/Link>`"
+# playtop
+playtop_0: "**Use:**\n> `${playtop_prefix}playtop <Search/Link>`"
+playtop_1: "👍 Added to the top of the queue"
+# remove 
+remove_0: "**Please add Song-Location!**"
+remove_1: "**Use:**\n> `%{remove_prefix}remove <song position> [salary]`"
+remove_3: "**This song doesn't exist!**"
+remove_4: "Last Song in an Indexed Queue:"
+remove_5: "**You cannot delete the current Song (0)!**"
+remove_6: "**Use `%{remove_prefix1}skip` (Slash) Substitute command!**"
+remove_7: "**You need to delete at least 1 Song!**"
+remove_8: "🗑 **Removed %{amount} song %{remove_code1} from the queue!**\n> **YC**: `%{remove_member1}`"
+# replay 
+replay: "🔃 **Playback the current song!**"
+# rewind
+rewind_0: "**Please add Rewind Duration!**"
+rewind_1: "**Use:**\n> `%{rewind_prefix}rewind <number of seconds want to rewind>`"
+rewind_2: "⏩ **Rewinded the song for `%{seekNumber} seconds`!"
+# seek 
+seek_0: "**Please add Search Number of Locations-Duration!**"
+seek_1: "**Use:**\n> `%{seekk_prefix}seek <Duration in seconds>`"
+seek_3: "**Search position must be between `0` and `%{seek_code1}`!**"
+seek_4: "**Search for `%{seekNumber1} seconds`!**"
+# shuffle
+shiffle: "🔀 **shuffle %{shuffle1} Songs!**"
+# skip
+skip: "⏭ **Skipped, next song!**"
+# stop
+stop: "👑 **Stopped playing and left the Channel**"
+# volume
+volume_0: "Please add a number to adjust the volume!**\n**Use:**> `%{volume_prefix}volume <numbers>`"
+volume_1: "**The volume should be between: `0` to `150`!**"
+volume_3: "**Changed the Volume to: `%{volume_number}`!**"

@@ -1,0 +1,45 @@
+ping: "bot delay is now %{botping}" 
+# test
+# aigoogle
+nhapgido: "Enter something mate"
+cautraloi: "Here is your answer"
+clicklinktren: "Click on the link above"
+# avatar / server avatar
+dowload_avatar: "Download avatars here"
+# corona
+auto_update: "Auto-updating data"
+socanhiemtrenthegioi: "Number of COVID-19 infections in the world"
+corona1: "Number of infections:"
+corona2: "Number of deaths:"
+corona3: "Number of serious cases:"
+corona4: "Number of recoveries:"
+corona5: "Update day:"
+corona6: "Number of countries infected:"
+corona7: "Current number of infections:"
+khongthaytennuoc: "I can't find the name of the country you entered"
+info_corona: "Information about COVID-19 in:"
+info_corona2: "Information about COVID-19 in the county:"
+name_city1: "`Please enter county name`"
+nhapsaitenquan: "Please enter the state name separated from the county name by comma(,)! (Example: Dallas,tx)"
+nhaptenquan: "Please enter state name or state code"
+test_vacsin: "Number of cases tested vaccine"
+nhaptenbang: "Please enter state name"
+khongtimthaybang: "The state you requested was not found"
+info_bang: "Information about COVID-19 in the state"
+# emojis
+nhapemojis: "Please enter some emoji"
+banphongtocuaemojis: "Enlarged version of emoji:"
+emoji_wong: "Invalid emoji"
+# google
+nhapcaigidodetim: "Enter something to search"
+ketquatimkiem: "Result:"
+nhunggitimthay: "Here's what I found"
+# youtube 
+tenchuatukhieudam: "The pedophile cunt went to google to find it"
+thieutenvideo: "You have to write down the name of the YouTube video so I can find it, right?"
+thaotacquanhanh: "Calm down pro try again in a few seconds"
+khongtimthayvideo1: "not found"
+khongtimthayvideo2: "try another youtube title"
+# máy tính
+hetthoigiansudungmaytinh: "Your computer usage time has expired (only used for 10 minutes)"
+nhapsaigiatri: "Syntax error"

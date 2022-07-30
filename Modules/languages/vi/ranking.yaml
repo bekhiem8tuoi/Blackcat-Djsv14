@@ -1,0 +1,23 @@
+ADMINISTRATOR: "bạn không thể sử dụng lệnh này chỏ admi mới có thể sử dụng"
+chidinhnguoidung: "bạn hãy chỉ định 1 ai đó"
+# addexp
+themexp: "hãy chỉ định số exp bạn muốn thêm"
+expam: "bạn không thể thêm exp âm"
+themthanhcong: "thêm thành công:"
+# leaderboard 
+chuacoai: "Có vẻ là chưa có ai trong bảng thành tích"
+bxhranking1: "bảng xếp hạng của:"
+bxhranking2: "bảng xếp hạng:"
+# rank
+khongcodiemrank: "Có vẻ như vẫn chưa hề có điểm xếp hạng nào cả"
+# removeexp
+nhapexpdexoa: "vui lòng nhập số exp để xoá"
+khongthexoaexpam: "Không thể xoá exp âm"
+xoathanhcong: "Đã xoá thành công:"
+xoacua: "của"
+# resetrank
+dasayraloi: "đã xảy ra lỗi vui lòng thử lại sau"
+reset_success: "đã reset thành công:"
+# setlevel
+nhapsolevel: "Vui lòng nhập số level bạn muốn thêm"
+khongthethemlevelam: "Bạn không thể thêm lever âm"

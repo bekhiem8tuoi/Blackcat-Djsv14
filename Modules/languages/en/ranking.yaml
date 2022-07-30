@@ -1,0 +1,23 @@
+ADMINISTRATOR: "you can't use this command only admin can use"
+chidinhnguoidung: "Please nominate someone"
+# addexp
+themexp: "Please specify the amount of exp you want to add"
+expam: "you can't add negative exp"
+themthanhcong: "more success:"
+# leaderboard 
+chuacoai: "Looks like there's no one on the leaderboard yet"
+bxhranking1: "ranking of:"
+bxhranking2: "ranking:"
+# rank
+khongcodiemrank: "Looks like there are no ratings yet"
+# removeexp
+nhapexpdexoa: "please enter exp number to delete"
+khongthexoaexpam: "Can't remove negative exp"
+xoathanhcong: "Deleted successfully:"
+xoacua: "of"
+# resetrank
+dasayraloi: "An error occurred, please try again later"
+reset_success: "successfully reset:"
+# setlevel
+nhapsolevel: "Please enter the number of levels you want to add"
+khongthethemlevelam: "You cannot add negative lever"

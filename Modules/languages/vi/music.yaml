@@ -1,0 +1,101 @@
+thamgiakenhvoicecuatoi: "Hãy tham gia kênh voice của tôi"
+haythamgiavoicetruoc: "Hãy tham gia kênh voice trước khi sử dụng lệnh"
+kenhvoicedaytoikhongthetamgia: "Kênh voice của bạn đã đầy, tôi không thể tham gia"
+toidangduocketnoionoikhac: "Tôi đã được kết nối ở một nơi khác"
+danhsachtrong: "Tôi không hát bất cứ bài nào ngay bây giờ"
+dj_roles: "Bạn không phải là DJ và không phải là Người yêu cầu bài hát"
+error: "Đã sảy ra lỗi:"
+sudunglenh: "Sử dụng:"
+# addrelated
+timkiembaihatcmds: "%{emojidongcmds} Tìm kiếm bài hát liên quan cho... **${timkiemnhacfhhshdjxjshd}**"
+dathemnhacdkfjjfjddjjd: "👍 Thêm: **%{dathembaihatmoi}**"
+# autoplay
+dj_roles2: "Bạn không phải là DJ và không phải là Người yêu cầu bài hát!\n> ${dj_roles1}`"
+autoplay_success: "**%{autoplaycmds} Tự động phát!**\n> 👑 **YC bởi**: `${duocyeucauboi}`"
+#autoensure
+bat: "Bật"
+tat: "Tắt"
+# clearms
+clearms: "🗑 **Đã xóa Hàng đợi và đã xóa: %{amount} bài hát!**\n> 💢 **YC bởi**: `%{fjjdjdjdjdjdjdj}`"
+# forward
+forward: "⏩ **Đã chuyển tiếp bài hát cho `%{seekNumber} Giây`!**\n> 💢 **Yc bởi**: `%{djfjjdjdj}`"
+forward2: "Tôi không có gì để hát ngay bây giờ!\nSử dụng: > `${prefixcta}forward <Thời lượng tính bằng giây>`"
+# grab
+autoplayzzz: "Tự động phát:"
+daphattrong: "Đã phát trong: "
+check_tinnhan: "%{Meow} **Kiểm tra tin nhắn của bạn!**"
+khongthenhantin: "%{Meow2} **Tôi không thể nhắn tin cho bạn!**"
+# jump
+jump_vitri: "**Vui lòng thêm một vị trí để chuyển đến!**"
+jump_vitri1: "**Vị trí phải nằm trong khoảng từ `0` đến `%{jump_vitricmds}`!**"
+jump_vitri2: "`👌 **Đã nhảy đến bài hát thứ `%{baihatthu}` trong Hàng đợi!**\n> 🐲 **YC bởi**: `%{thanhvienyeucaubaihat_jump}`"
+# list 
+list_dungdau: "📑 **Đứng đầu %{list_thesong} | Hàng đợi của %{guild_name}**"
+list_dungdau1: "**Bài hát hiện tại:**\n> [`%{list_baihathientai0}`](%{list_baihathientai1})\n\n%{list_baihathientai2}"
+list_dungdau2: "%{blackcatdata}\n%{list_baihathientai3} Bài hát trong hàng đợi | Khoảng thời gian: %{list_baihathientai4}"
+list_dungdau3: "Chọn một trang"
+list_dungdau4: "Trang:"
+list_dungdau5: "Cho thấy %{index}/%{list_baihathientai5} Trang!"
+# loop
+loop_1: "**Vui lòng thêm các tùy chọn hợp lệ!**"
+loop_2: "**Đã tắt chế độ vòng lặp!**\n> **YC bởi**: `%{loop_member}`"
+loop_3: "**Đã bật vòng lặp bài hát** ||(Đã tắt **Hàng đợi - Vòng lặp**)||\n> **YC bởi**: `%{loop_member1}`"
+loop_4: "**Đã bật vòng lặp hàng đợi!** ||(Đã tắt **Bài hát - Vòng lặp**)||\n> **YC bởi**: `${loop_member2}`"
+# lyrics
+lyrics_1: "Bài hát không được tìm thấy!"
+lyrics_2: "Quá lâu để hiển thị, hãy truy cập [https://popcat.xyz/lyrics/%{url1}](https://popcat.xyz/lyrics/%{url2}) Để có lời bài hát đầy đủ"
+lyrics_3: "Không có"
+# move
+move_vitri0: "**Vui lòng thêm vị trí bài hát!**"
+move_vitri1: "**Sử dụng:**\n> `%{tientocuabot}move <Vị trí bài hát> <Đến vị trí mong muốn>`"
+move_vitri3: "**Vui lòng thêm số để di chuyển vị trí!**"
+move_vitri4: "**Vui lòng thêm một Bài hát Vị trí con số!**"
+move_vitri5: "**Bài hát này không tồn tại!**"
+move_vitri6: "**Bài hát cuối cùng trong Hàng đợi có Chỉ mục: "
+move_vitri7: "**Không thể di chuyển bài hát trước khi phát bài hát!**"
+move_vitri8: "📑 Đã chuyển **%{move_vitri9}** đến **`%{move_vitri10}`** ngay sau **_%{move_vitri11}_!**"
+# nowplaying
+nowplay_0: "không có nhạc"
+nowplay_1: "danh sách nhạc trống"
+nowplay_3: "Chưa vào voice nào cả"
+# play
+play_0: "**Vui lòng thêm tên bài hát để Tìm kiếm!**"
+play_1: "**Sử dụng:**\n> `%{play_prefix}play <Tên bài hát/Liên kết>`"
+play_2: "%{play_emoji} Đang tìm kiếm... ```%{play_Text}```"
+play_3: "Đang tìm kiếm"
+play_4: "Đang phát"
+# playskip
+playskip_1: "**Sử dụng:**\n> `%{playskip1_prefix}playskip <Tên bài hát/Liên kết>`"
+# playtop
+playtop_0: "**Sử dụng:**\n> `${playtop_prefix}playtop <Search/Link>`"
+playtop_1: "👍 Đã thêm vào đầu hàng đợi"
+# remove 
+remove_0: "**Vui lòng thêm Bài hát-Vị trí!**"
+remove_1: "**Sử dụng:**\n> `%{remove_prefix}remove <Vị trí bài hát> [Số lượng]`"
+remove_3: "**Bài hát này không tồn tại!**"
+remove_4: "Bài hát cuối cùng trong Hàng đợi có Chỉ mục:"
+remove_5: "**Bạn không thể xóa Bài hát hiện tại (0)!**"
+remove_6: "**Sử dụng `%{remove_prefix1}skip` (Slash) Lệnh thay thế!**"
+remove_7: "**Bạn cần xóa ít nhất 1 Bài hát!**"
+remove_8: "🗑 **Đã xóa %{amount} bài hát%{remove_code1} ra khỏi hàng đợi!**\n> **YC**: `%{remove_member1}`"
+# replay 
+replay: "🔃 **Phát lại bài hát hiện tại!**"
+# rewind
+rewind_0: "**Vui lòng thêm Thời lượng tua lại!**"
+rewind_1: "**Sử dụng:**\n> `%{rewind_prefix}rewind <số giây muốn tua lại>`"
+rewind_2: "⏩ **Đã tua lại bài hát cho `%{seekNumber} giây`!"
+# seek 
+seek_0: "**Vui lòng thêm Tìm kiếm Số Vị trí-Thời lượng!**"
+seek_1: "**Sử dụng:**\n> `%{seekk_prefix}seek <Thời lượng tính bằng giây>`"
+seek_3: "**Vị trí tìm kiếm phải nằm trong khoảng từ `0` đến `%{seek_code1}`!**"
+seek_4: "**Tìm kiếm `%{seekNumber1} giây`!**"
+# shuffle
+shiffle: "🔀 **xáo trộn %{shuffle1} Bài hát!**"
+# skip
+skip: "⏭ **Đã bỏ qua, bài hát tiếp theo!**"
+# stop
+stop: "👑 **Đã dừng phát và rời khỏi Kênh**"
+# volume
+volume_0: "Vui lòng thêm một con số để điều chỉnh âm lượng!**\n**Sử dụng:**> `%{volume_prefix}volume <con số>`"
+volume_1: "**Âm lượng phải ở giữa: `0` đến `150`!**"
+volume_3: "**Đã thay đổi Âm lượng thành: `%{volume_number}`!**"

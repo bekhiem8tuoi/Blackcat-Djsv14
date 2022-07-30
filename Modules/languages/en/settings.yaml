@@ -1,0 +1,25 @@
+ping: "test language ` ms"
+# laguage
+lang_perm: "You need the `MANAGE_GUILD` permission to use this command."
+lang_arg: "Please specify a language! <vi, en>"
+provide_lang: "Please provide languages: `%{languages}`"
+lang_set: "`🔧` | *Language has been set to:* `%{language}`"
+lang_change: "`🔧` | *Language has been change to:* `%{language}`"
+lang_error: "Something went wrong please try again later."
+# prefix 
+prefix_perm: "You need the `MANAGE_GUILD` permission to use this command."
+prefix_arg: "Please specify a prefix!"
+prefix_length: "The prefix can't be longer than 10 characters!"
+prefix_set: "`🔧` | *Prefix has been set to:* `%{prefix}`"
+prefix_change: "`🔧` | *Prefix has been change to:* `%{prefix}`"
+prefix_error: "An error occured while setting the prefix!"
+# settup music 
+hangdoicua: "Queue of:"
+khongconhac: "**There are currently 0 Songs in the Queue**"
+debatdauhat: "Start listening to music by connecting to Voice Channel and sending **SONG LINK** or **SONG NAME** in this Channel"
+mp3online: "Link audio and MP3 directly"
+thattinh: "love sick"
+dowload_music: "Download Music-Playlist:"
+chuapingkenh: "You forgot to ping the text channel"
+success_music: "Successfully set up Music System in:"
+# 

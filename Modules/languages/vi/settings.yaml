@@ -1,0 +1,24 @@
+#language 
+lang_perm: "Bạn cần quyền `MANAGE_GUILD` để sử dụng lệnh này."
+lang_arg: "Vui lòng chỉ định một ngôn ngữ! <vi, en>"
+provide_lang: "Vui lòng cung cấp các ngôn ngữ: `%{languages}`"
+lang_set: "`🔧` | *Ngôn ngữ đã được đặt thành:* `%{language}`"
+lang_change: "`🔧` | *Ngôn ngữ đã được thay đổi thành:* `%{language}`"
+lang_error: "Đã xảy ra sự cố, vui lòng thử lại sau."
+# prefix
+prefix_perm: "Bạn cần quyền `MANAGE_GUILD` để sử dụng lệnh này."
+prefix_arg: "Vui lòng chỉ định một Prefix!"
+prefix_length: "Prefix không được dài hơn 10 ký tự!"
+prefix_set: "`🔧` | *Prefix đã được đặt thành:* `%{prefix}`"
+prefix_change: "`🔧` | *Prefix đã được thay đổi thành:* `%{prefix}`"
+prefix_error: "Đã xảy ra lỗi khi đặt Prefix!"
+# automusic
+hangdoicua: "Hàng đợi của:"
+khongconhac: "**Hiện tại có 0 Bài hát trong Hàng đợi**"
+debatdauhat: "Bắt đầu nghe nhạc bằng cách kết nối với Kênh thoại và gửi **LIÊN KẾT BÀI HÁT** hoặc **TÊN BÀI HÁT** trong Kênh này"
+mp3online: "Liên kết âm thanh và MP3 trực tiếp"
+thattinh: "thất tình"
+dowload_music: "Tải Nhạc-Danh sách phát:"
+chuapingkenh: "Bạn quên chưa ping kênh văn bản"
+success_music: "Đã thiết lập thành công Hệ thống âm nhạc trong:"
+# 

@@ -1,0 +1,9 @@
+# messageCreate
+no_premission: "You lack permission for this command"
+premission_user: "You do not have **`%{premission_01}`** permission in <#%{premission_02}> to execute this **`%{premission_03}`** command."
+premission_owner: "Only <@%{premission_001}> can use this command!"
+my_prefix: "`🤖` | *My Prefix is:* `%{prefix}`"
+thoigianhoilenh: "Please wait for `%{thoigian} Seconds` before using the command again: `%{tenlenh}`"
+loigoidi: "Error has been sent"
+sailenhroinhe: "oh, wrong order"
+sailenhroinhe2: "you entered the wrong command, then use %{emoji} %{help}help to review all commands"

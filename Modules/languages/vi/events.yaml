@@ -1,0 +1,9 @@
+# messageCreate
+no_premission: "Bạn thiếu quyền cho lệnh này"
+premission_user: "Bạn không có quyền **`%{premission_01}`** trong <#%{premission_02}> để thực hiện lệnh **`%{premission_03}`** này."
+premission_owner: "Chỉ <@%{premission_001}> mới có thể sử dụng lệnh này!"
+my_prefix: "`🤖` | *Prefix của tôi là:* `%{prefix}`"
+thoigianhoilenh: "Vui lòng đợi `%{thoigian} Giây` trước khi sử dụng lại lệnh: `%{tenlenh}`"
+loigoidi: "Lỗi đã được gởi đi"
+sailenhroinhe: "ồ ố sai lệnh rồi nhé"
+sailenhroinhe2: "bạn nhập sai lệnh rồi bạn ới %{emoji} %{help}help để xem lại tất cả các lệnh"

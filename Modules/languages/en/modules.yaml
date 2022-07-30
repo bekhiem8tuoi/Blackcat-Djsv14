@@ -1,0 +1,4 @@
+# welcome 
+thanhvienthu: "member: #%{sothanhvien}"
+# Goodbye
+thanhvienconlai: "remaining members: #%{sothanhvien}"

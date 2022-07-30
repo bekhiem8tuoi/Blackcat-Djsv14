@@ -1,0 +1,11 @@
+# welcome 
+thanhvienthu: "Bạn là thành viên thứ: #%{sothanhvien}"
+# Goodbye
+thanhvienconlai: "Thành viên còn lại: #%{sothanhvien}"
+# joincreate
+join_crt: "Chủ sở hữu đã rời đi, bạn hiện là người mới!"
+join_crt2: "bây giờ bạn có quyền truy cập vào tất cả các lệnh `<Prefix>help voice!`"
+# reaction Roles
+reaction_roles0: "Roles ở trên Roles cao nhất của tôi, tôi không thể giao nó cho bạn!"
+reaction_roles1: "Roles này đã bị xóa, tôi không thể giao nó cho bạn!"
+reaction_roles3: "roles này đã bị xóa, tôi không thể xóa roles đó cho bạn"
