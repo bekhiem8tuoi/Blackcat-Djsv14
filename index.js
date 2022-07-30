@@ -8,7 +8,7 @@ client.aliases = new Collection();
 client.commands = new Collection();
 client.cooldowns = new Collection();
 client.slashCommands = new Collection();
-client.categories = require("fs").readdirSync("./commands");
+client.categories = require("fs").readdirSync("./Commands");
 client.setMaxListeners(100); require('events').defaultMaxListeners = 100;
 const { antiCrash } = { "antiCrash": true };
 ["Commands", antiCrash ? "antiCrash" : null, "Events"]
