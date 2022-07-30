@@ -47,8 +47,8 @@ module.exports = {
             emoji: Heyhey,
             description: `${client.i18n.get(language, "includes", "economy")}`
           },{
-            label: "Emotions",
-            value: "Emotions",
+            label: "Developer",
+            value: "Developer",
             emoji: Ricado,
             description: `${client.i18n.get(language, "includes", "emotions")}`
           },{
@@ -189,7 +189,7 @@ module.exports = {
                 switch (value.toLowerCase()){
                   case "Trang chủ": index = 0; break;
                   case "economy": index = 1; break;
-                  case "emotions": index = 2; break;
+                  case "developer": index = 2; break;
                   case "filter": index = 3; break;
                   case "game": index = 4; break;
                   case "giveaway": index = 5; break;

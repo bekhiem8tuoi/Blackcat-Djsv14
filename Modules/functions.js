@@ -345,8 +345,8 @@ module.exports = (client) = {
             const name = `${pull.name}`
             economycmds.push(name);       
           });
-          readdirSync(`./commands/Emotions`).forEach((file) => {
-          const pull = require(`../commands/Emotions/${file}`);
+          readdirSync(`./commands/Developer`).forEach((file) => {
+          const pull = require(`../commands/Developer/${file}`);
           const name = `${pull.name}`
           emotionscmds.push(name);       
           });
@@ -425,7 +425,7 @@ ${Hihi} - ${Hihi} - ${Hihi} - ${Hihi} - ${Hihi} - ${Hihi}
 
           var embed1 = new EmbedBuilder() // emotion
           .setColor(database.colors.vang)
-          .setTitle("Emotion Commands")
+          .setTitle("Dev Commands")
           .setDescription(`
 ${Hihi} - ${Hihi} - ${Hihi} - ${Hihi} - ${Hihi} - ${Hihi}
 \`\`\`
