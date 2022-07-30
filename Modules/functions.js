@@ -127,28 +127,6 @@ module.exports = (client) = {
           };
   },
 /**
-  * update music Distibe
-**/
-  updateMusicSystem: async function(queue, leave = false) {
-          if(!queue) return;
-          if (client.settings.get(queue.id, `music.channel`).length > 5) { //  && client.settings.get(queue.id, `music.channel`)
-          let messageId = client.settings.get(queue.id, `music.message`);
-          let guild = client.guilds.cache.get(queue.id);
-          if (!guild) return;
-          let channel = guild.channels.cache.get(client.settings.get(queue.id, `music.channel`));
-          if (!channel) channel = await guild.channels.fetch(client.settings.get(queue.id, `music.channel`)).catch(() => {}) || false
-          if (!channel) return;
-          if (!channel.permissionsFor(channel.guild.me).has(Permissions.FLAGS.SEND_MESSAGES)) return 
-          let message = channel.messages.cache.get(messageId);
-          if (!message) message = await channel.messages.fetch(messageId).catch(() => {}) || false;
-          if (!message) return;
-          var data = generateQueueEmbed(client, queue.id, leave)
-          message.edit(data).catch((e) => {
-              console.log(e)
-          }).then(m => {/* */});
-        };
-  },
-/**
   * lấy thông tin user và tất cả user
 **/
   GetUser: function(message, arg){
@@ -605,4 +583,78 @@ ${Hihi} - ${Hihi} - ${Hihi} - ${Hihi} - ${Hihi} - ${Hihi}
             .setFooter({ text: `${index + 1}/${embeds.length}`, iconURL:  `${database.avatar}`});
       });
    },
+/***
+   * Distube events
+***/
+  updateMusicSystem: async function(queue, leave = false) {
+          if(!queue) return;
+          if (client.settings.get(queue.id, `music.channel`).length > 5) { //  && client.settings.get(queue.id, `music.channel`)
+          let messageId = client.settings.get(queue.id, `music.message`);
+          let guild = client.guilds.cache.get(queue.id);
+          if (!guild) return;
+          let channel = guild.channels.cache.get(client.settings.get(queue.id, `music.channel`));
+          if (!channel) channel = await guild.channels.fetch(client.settings.get(queue.id, `music.channel`)).catch(() => {}) || false
+          if (!channel) return;
+          if (!channel.permissionsFor(channel.guild.me).has(Permissions.FLAGS.SEND_MESSAGES)) return 
+          let message = channel.messages.cache.get(messageId);
+          if (!message) message = await channel.messages.fetch(messageId).catch(() => {}) || false;
+          if (!message) return;
+          var data = generateQueueEmbed(client, queue.id, leave)
+          message.edit(data).catch((e) => {
+              console.log(e)
+          }).then(m => {/* */});
+        };
+  },
+  dj_role2: function(client, member, song) {
+    if(!client) return false;
+    var roleid = client.settings.get(member.guild.id, `djroles`)
+    if (String(roleid) == "") return false;
+    var isdj = false;
+    for (let i = 0; i < roleid.length; i++) {
+        if (!member.guild.roles.cache.get(roleid[i])) continue;
+        if (member.roles.cache.has(roleid[i])) isdj = true;
+    }
+    if (!isdj && !member.permissions.has("Administrator") && song.user.id != member.id) {
+        return roleid.map(i=>`<@&${i}>`).join(", ");
+    } else {
+        return false;
+    }
+  },
+  
+  createBar: function(total, current, size = 25, line = "▬", slider = `${emoji.Hihi}`) {
+    try {
+      if (!total) throw "BỎ LỠ LẦN TỐI ĐA";
+      if (!current) return `**[${slider}${line.repeat(size - 1)}]**`;
+      let bar = current > total 
+          ? [line.repeat(size / 2 * 2), (current / total) * 100] 
+          : [line.repeat(Math.round(size / 2 * (current / total))).replace(/.$/, slider) 
+            + line.repeat(size - Math.round(size * (current / total)) + 1), current / total];
+      if (!String(bar).includes(slider)) {
+        return `**[${slider}${line.repeat(size - 1)}]**`;
+      } else{
+        return `**[${bar[0]}]**`;
+      }
+    } catch (e) {
+      console.log(String(e.stack))
+    }
+  },
+
+  delay: function(delayInms) {
+    try {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(2);
+        }, delayInms);
+      });
+    } catch (e) {
+      console.log(String(e.stack))
+    }
+  },
+  escapeRegex: function(str) {
+    try {
+      return str.replace(/[.*+?^${}()|[\]\\]/g, `\\$&`);
+    } catch (e) {
+      console.log(String(e.stack).bgRed)
+    }
+  },
 };

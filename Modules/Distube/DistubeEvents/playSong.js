@@ -1,6 +1,6 @@
 module.exports = (client) => {
 const { ButtonBuilder, EmbedBuilder, ButtonStyle, ActionRowBuilder, SelectMenuBuilder } = require("discord.js");
-const { dj_role2, createBar, delay, escapeRegex } = require("../music");
+const { dj_role2, createBar, delay, escapeRegex } = require("../../functions");
 const { updateMusicSystem } = require("../../functions");
 const database = require("../../Json/database.json"); 
 const moibot = require("../../Json/invite.json");
