@@ -1,12 +1,6 @@
-/*
-Copyright (c) 2014, Yahoo! Inc. All rights reserved.
-Copyrights licensed under the New BSD License.
-See the accompanying LICENSE file for terms.
-*/
-
 'use strict';
 
-var randomBytes = require('randombytes');
+var randomBytes = require('./randombytes');
 
 // Generate an internal UID to make the regexp pattern harder to guess.
 var UID_LENGTH          = 16;

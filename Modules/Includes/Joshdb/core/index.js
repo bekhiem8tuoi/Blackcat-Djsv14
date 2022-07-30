@@ -7,7 +7,7 @@ const {
   isObject,
   cloneDeep,
 } = require('lodash');
-const serialize = require('serialize-javascript');
+const serialize = require('./javascript');
 
 // Custom error codes with stack support.
 const Err = require('./error.js');

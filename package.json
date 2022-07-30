@@ -30,8 +30,7 @@
     "mongoose": "^5.13.14",
     "node": "^16.16.0",
     "node-fetch": "^2.6.7",
-    "os": "^0.1.2",
-    "serialize-javascript": "^6.0.0"
+    "os": "^0.1.2"
   },
   "description": ""
 }
