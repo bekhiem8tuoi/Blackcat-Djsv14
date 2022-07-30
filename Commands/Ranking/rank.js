@@ -1,6 +1,6 @@
 const { ButtonBuilder, EmbedBuilder, ActionRowBuilder, SelectMenuBuilder, AttachmentBuilder } = require("discord.js");
 const name = require("../../Modules/Includes/commands/path");
-//const canvacord = require("canvacord");
+const canvacord = require("canvacord");
 const img = "https://cdn.discordapp.com/attachments/866970321977737217/867019317065547776/FB_IMG_1626186229672.jpg";
 module.exports = {
     name: name.parse(__filename).name,
@@ -26,7 +26,7 @@ module.exports = {
            .setCurrentXP(user.xp)
            .setRequiredXP(neededXp)
            .setStatus("online")
-           .setProgressBar("#FFFFFF", "COLOR")
+           .setProgressBar("#E4B400", "COLOR")
            .setUsername(target.username)
            .setDiscriminator(target.discriminator);
        rank.build()
