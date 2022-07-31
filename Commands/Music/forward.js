@@ -4,8 +4,8 @@ const { dj_role } = require("../../Modules/functions");
 module.exports = {
     name: name.parse(__filename).name,
     usage: `${name.parse(__filename).name}`,
-    aliases: ["atpl", "tdp"], // lệnh phụ
-    description: "bật chế độ tự động phát", // mô tả lệnh
+    aliases: ["", ""], // lệnh phụ
+    description: "chuyển tiếp trong N giây", // mô tả lệnh
     userPerms: [], // Administrator, ....
     owner: false, //: tắt // true : bật
     category:"Music", // tên folder chứa lệnh
@@ -20,16 +20,23 @@ module.exports = {
       try {
         let newQueue = client.distube.getQueue(guildId);
 				if (!newQueue || !newQueue.songs || newQueue.songs.length == 0) return message.reply({ content: `${client.i18n.get(language, "music", "danhsachtrong")}` })
-				if (dj_role(client, member, newQueue.songs[0])) { 
-					return message.reply({ content: `${client.i18n.get(language, "music", "dj_roles2", {
-            dj_roles1: dj_role(client, member, newQueue.songs[0])
-          })}`});
+
+				if (!args[0]) {
+					return message.reply({ content: `${client.i18n.get(language, "music", "forward2", {
+            prefixcta: prefix
+          })}`})
 				}
-				await newQueue.toggleAutoplay();
-				message.reply({ content: `${client.i18n.get(language, "music", "autoplay_success", {
-          autoplaycmds: newQueue.autoplay ? `${emoji.v}` :`${emoji.x}`,
-          dupcyeucauboi: member.user.tag
-        })}`})
+				let seekNumber = Number(args[0])
+				let seektime = newQueue.currentTime + seekNumber;
+				if (seektime >= newQueue.songs[0].duration) seektime = newQueue.songs[0].duration - 1;
+				if (dj_role(client, member, newQueue.songs[0])) { 
+                    return message.reply({ content: `${client.i18n.get(language, "music", "dj_roles")}\nDJ-ROLES:**> ${dj_role(client, member, newQueue.songs[0])}` });
+				}
+				await newQueue.seek(seektime);
+				message.reply({ content: `${client.i18n.get(language, "music", "forward", {
+          seekNumber: seekNumber,
+          djfjjdjd: member.user.tag
+        })}` });
       } catch (error) {
         console.log(error);
       };
