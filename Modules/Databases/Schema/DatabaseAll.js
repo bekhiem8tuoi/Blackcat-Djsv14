@@ -21,7 +21,7 @@ module.exports = (client) => {
             dbName: client.user.username.replace(" ", ""),
        },
    });
-
+/**
    client.infos = new BlackCat_Database({
          name: "infos",
          provider: provider,
@@ -31,17 +31,17 @@ module.exports = (client) => {
             dbName: client.user.username.replace(" ", ""),
          },
     });
-
-    client.jointocreatemap = new BlackCat_Database({
-         name: "jointocreatemap",
+**/
+    client.giveawayDB = new BlackCat_Database({
+         name: "giveawayDB",
          provider: provider,
          providerOptions: {
             url: process.env.mongourl || mongourl,
-            collection: "jointocreatemap",
+            collection: "giveawayDB",
             dbName: client.user.username.replace(" ", ""),
          },
     });
-
+/**
     client.reactionrole = new BlackCat_Database({
          name: "reactionrole",
          provider: provider,
@@ -88,4 +88,5 @@ module.exports = (client) => {
             dbName: client.user.username.replace(" ", ""),
          },
     });
+  **/
 };                                      

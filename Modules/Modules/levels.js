@@ -1,7 +1,13 @@
 module.exports = ( client ) => {
+  const description = {
+        name: name.parse(__filename).name,
+        filename: name.parse(__filename).name,
+        version: "5.0"
+  };
   const config = require("../../config.json");
   const Levels =  require("../../Modules/Includes/commands/ranking");
   Levels.setURL(`${process.env.mongourl || config.mongourl }`);
+  console.log(` :: ⬜️ modules: ${description.name} | Phiên bản đã tải ${description.version} Từ ("${description.filename}")`.red);
   client.on("messageCreate", async (message) => {
        if (!message.guild || message.author.bot) return;
        const blackcat = client.language;

@@ -11,9 +11,7 @@ module.exports = {
     category:"Infomation", // tên folder chứa lệnh
     cooldown: 5, // thời gian có thể tái sử dụng lệnh
     run: async(client, message, args, prefix, database, emoji, language) => {
-      fs.readdir("./Modules/sound", voice());
-      //////
-      function voice(err, files) {
+      fs.readdir("./Modules/sound", function voice(err, files) {
       if (err) return message.reply({ content: `${client.i18n.get(language, "includes", "khongdocthumuc", {
         hienthiloi: err
       })}`});
@@ -25,6 +23,6 @@ module.exports = {
       prefix: prefix,
       hienthisound: sounds.join(", ")
       })}` }).catch(console.error);
-      };
+      });
     },
 };
