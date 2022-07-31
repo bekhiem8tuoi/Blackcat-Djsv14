@@ -595,7 +595,7 @@ ${Hihi} - ${Hihi} - ${Hihi} - ${Hihi} - ${Hihi} - ${Hihi}
           let channel = guild.channels.cache.get(client.settings.get(queue.id, `music.channel`));
           if (!channel) channel = await guild.channels.fetch(client.settings.get(queue.id, `music.channel`)).catch(() => {}) || false
           if (!channel) return;
-          if (!channel.permissionsFor(channel.guild.me).has(Permissions.FLAGS.SEND_MESSAGES)) return 
+          if (!channel.permissionsFor(channel.guild.me).has(PermissionFlagsBits.SendMessages)) return 
           let message = channel.messages.cache.get(messageId);
           if (!message) message = await channel.messages.fetch(messageId).catch(() => {}) || false;
           if (!message) return;
