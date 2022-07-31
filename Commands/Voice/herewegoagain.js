@@ -4,7 +4,7 @@ const name = require("../../Modules/Includes/commands/path");
 module.exports = {
     name: name.parse(__filename).name,
     usage: `${name.parse(__filename).name}`,
-    aliases: ["", ""], // lệnh phụ
+    aliases: ["hga", ""], // lệnh phụ
     description: `play voice: ${name.parse(__filename).name}`, // mô tả lệnh
     userPerms: ["Connect"], // Administrator, ....
     owner: false, //: tắt // true : bật
@@ -14,7 +14,7 @@ module.exports = {
     const channel = message.member.voice.channel;
 		if(!channel) return message.reply({ content: `${client.i18n.get(client.language, "voice", "voice_1")} :wink:` });
 		const player = createAudioPlayer();
-		const resource = createAudioResource('./Modules/sound/70tuoi.mp3');
+		const resource = createAudioResource('./Modules/sound/herewegoagain.mp3');
 		const connection = joinVoiceChannel({
 			channelId: channel.id,
 			guildId: message.guild.id,

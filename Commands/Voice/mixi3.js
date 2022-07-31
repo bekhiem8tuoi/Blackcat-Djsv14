@@ -14,7 +14,7 @@ module.exports = {
     const channel = message.member.voice.channel;
 		if(!channel) return message.reply({ content: `${client.i18n.get(client.language, "voice", "voice_1")} :wink:` });
 		const player = createAudioPlayer();
-		const resource = createAudioResource('./Modules/sound/70tuoi.mp3');
+		const resource = createAudioResource('./Modules/sound/mixi3.mp3');
 		const connection = joinVoiceChannel({
 			channelId: channel.id,
 			guildId: message.guild.id,

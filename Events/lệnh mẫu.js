@@ -27,3 +27,6 @@ module.exports = (client) => {
     console.log(` :: ⬜️ modules: ${description.name} | Phiên bản đã tải ${description.version} Từ ("${description.filename}")`.red);
     // code
 };
+
+// thay đổi ngôn nghữ
+${client.i18n.get(client.language, "tên folder commands", "ngôn ngữ")}
