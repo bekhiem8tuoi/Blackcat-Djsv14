@@ -46,6 +46,11 @@ give_43: ":x: Bạn phải đề cập đến một kênh hợp lệ!"
 give_44: ":x: Bạn phải chỉ định thời hạn hợp lệ!"
 give_45: ":x: Bạn phải chỉ định một số lượng người chiến thắng hợp lệ!"
 give_46: ":x: Bạn phải chỉ định một giải thưởng hợp lệ!"
+
+
+give_47: "🎁 Xin chúc mừng người may mắn!"
+give_48: "xin chào %{give_481}\n Tôi nghe nói rằng bạn đã thắng **[[Giveaway này]](https://discord.com/channels/%{give_482}/%{give_483}/%{give_484})**\n Bạn đã dành được: **%{give_485}!**\nNhắn tin trực tiếp cho người tổ chức để nhận giải thưởng của bạn!!"
+
 #########
 ADMINISTRATOR: "**bạn không thể sử dụng, chỉ admin mới có thể sử dụng lệnh này**"
 sayraloi: "sảy ra lỗi"

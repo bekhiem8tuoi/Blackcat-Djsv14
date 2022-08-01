@@ -175,7 +175,7 @@ module.exports = {
         client.giveawaysManager.end(giveaway.messageId).then(() => {
             message.reply(`${client.i18n.get(client.language, "moderation", "give_14")}`);
         }).catch((e) => {
-                message.reply({ content: e });
+                message.reply({ content: `${e}` });
         });
     } else if (args[0].toLowerCase() === "list") {
         const select = new SelectMenuBuilder()

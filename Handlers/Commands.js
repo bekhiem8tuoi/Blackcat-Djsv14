@@ -1,9 +1,11 @@
 const ascii = require('../Modules/Includes/commands/cmds_log');
 const { GiveawaysManager } = require("discord-giveaways");
 const database = require("../Modules/Json/database.json");
+const { EmbedBuilder } = require("discord.js")
+const database = require("../Modules/Json/database.json");
 let table = new ascii('BlackCat - commands');
 table.setHeading("Tên file", "Tình trạng");
-const { readdirSync, readdir } = require("fs");
+const { readdirSync } = require("fs");
 module.exports = (client) => {
     try{ 
         client.on("ready", () => {
@@ -115,13 +117,25 @@ module.exports = (client) => {
          embedColor: database.colors.vang,
          reaction: "🎉",
        },
-     });
-     readdir("./Modules/Giveaways", (_err, files) => {
-       files.forEach((file) => {
-         if (!file.endsWith(".js")) return;
-         const event = require(`../Modules/Giveaways/${file}`);
-         let eventName = file.split(".")[0];
-         client.giveawaysManager.on(eventName, (...file) => event.execute(...file, client)), delete require.cache[require.resolve(`../Modules/Giveaways/${file}`)];
-       });
+    });
+    client.giveawaysManager.on("giveawayEnded", (giveaway, winners) => {
+        winners.forEach((member) => {
+           member.send({ embeds: [new EmbedBuilder()
+               .setTitle(`${client.i18n.get(client.language, "moderation", "give_47")}`)
+               .setColor(database.colors.vang)
+               .setDescription(`${client.i18n.get(client.language, "moderation", "give_48", {
+                 give_481: member.user,
+                 give_482: giveaway.guildId,
+                 give_483: giveaway.channelId,
+                 give_484: giveaway.messageId,
+                 give_485: giveaway.prize
+               })}`)
+               .setFooter({ text: `${database.name}`, iconURL: `${database.avatar}`})
+               .setTimestamp()
+          ]}).catch(e => {});
+        });
+    });
+    client.giveawaysManager.on("giveawayReactionRemoved", (giveaway, member, reaction) => {
+          console.log(`${member.user.tag} unreact to giveaway #${giveaway.messageId} (${reaction.emoji.name})`);
     });
 };
