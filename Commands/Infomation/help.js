@@ -62,11 +62,6 @@ module.exports = {
             emoji: Chem,
             description: `${client.i18n.get(language, "includes", "game")}`
           },{
-            label: "Giveaway",
-            value: "Giveaway",
-            emoji: Laclac,
-            description: `${client.i18n.get(language, "includes", "giveaway")}`
-          },{
             label: "Image",
             value: "Image",
             emoji: Dj,
@@ -192,16 +187,15 @@ module.exports = {
                   case "developer": index = 2; break;
                   case "filter": index = 3; break;
                   case "game": index = 4; break;
-                  case "giveaway": index = 5; break;
-                  case "image": index = 6; break;
-                  case "information": index = 7; break;
-                  case "moderation": index = 8; break;
-                  case "music": index = 9; break;
-                  case "ranking": index = 10; break;
-                  case "settings": index = 11; break;
-                  case "utility": index = 12; break;
-                  case "voice": index = 13; break;
-                  case "voicesetup": index = 14; break;
+                  case "image": index = 5; break;
+                  case "information": index = 6; break;
+                  case "moderation": index = 7; break;
+                  case "music": index = 8; break;
+                  case "ranking": index = 9; break;
+                  case "settings": index = 10; break;
+                  case "utility": index = 11; break;
+                  case "voice": index = 12; break;
+                  case "voicesetup": index = 13; break;
                 }
                 vembeds.push(theembeds[index])
               }

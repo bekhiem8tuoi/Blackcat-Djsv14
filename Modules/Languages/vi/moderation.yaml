@@ -30,7 +30,8 @@ give_27: "Phần thưởng:"
 give_28: "Yêu cầu: [Máy chủ này]"
 give_29: "Đã bắt đầu:"
 give_30: "Kết thúc:"
-
+give_31: "Thành công! Đã tạm dừng chương trình tặng quà"
+give_32: "Thành công! Đã bỏ tạm dừng Giveaway!"
 #########
 ADMINISTRATOR: "**bạn không thể sử dụng, chỉ admin mới có thể sử dụng lệnh này**"
 sayraloi: "sảy ra lỗi"

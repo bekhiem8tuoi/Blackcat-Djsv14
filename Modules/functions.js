@@ -330,7 +330,6 @@ module.exports = (client) = {
           const emotionscmds = [];
           const filtercmds = [];
           const gamecmds = [];
-          const giveawaycmds = [];
           const imagecmds = []; 
           const includescmds = [];
           const moderationcmds = [];
@@ -359,11 +358,6 @@ module.exports = (client) = {
           const pull = require(`../commands/Game/${file}`);
           const name = `${pull.name}`
           gamecmds.push(name);
-          });
-          readdirSync(`./commands/Giveaways`).forEach((file) => {
-          const pull = require(`../commands/Giveaways/${file}`);
-          const name = `${pull.name}`
-          giveawaycmds.push(name);
           });
           readdirSync(`./commands/Image`).forEach((file) => {
           const pull = require(`../commands/Image/${file}`);

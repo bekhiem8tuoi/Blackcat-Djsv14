@@ -30,6 +30,8 @@ give_27: "Reward:"
 give_28: "Request: [This Server]"
 give_29: "Started:"
 give_30: "End:"
+give_31: "Successful! Giveaway has been paused"
+give_32: "Successful! Giveaway unpaused!"
 
 ############
 ADMINISTRATOR: "**you can't use it, only admin can use this command**"

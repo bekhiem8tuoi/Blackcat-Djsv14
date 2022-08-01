@@ -109,6 +109,12 @@ module.exports = {
                           threshold: 50000,
                           embedColor: '#FF0000'
                         },
+                        pauseOptions: {
+                          isPaused: false,
+                          content: '⏸️ **GIVEAWAY NÀY ĐÃ TẠM DỪNG!** ⏸️',
+                          unPauseAfter: null,
+                          embedColor: '#FFFF00'
+                        },
                         messages: {
                           giveaway: (giveawayss.everyoneMention ? "@everyone\n\n" : "") + "🎉 **GIVEAWAY** 🎉",
                           giveawayEnded: (giveawayss.everyoneMention ? "@everyone\n\n" : "") + "🎉 **GIVEAWAY ENDED** 🎉",
@@ -230,6 +236,38 @@ module.exports = {
            if(reason == "time")
            msg.edit({ content: `${client.i18n.get(client.language, "moderation", "give_26")}`, components: [] })
           });
+       } else if (args[0].toLowerCase() === "pause") {
+           args.shift();
+            if (!args[0]) {
+                return message.reply({ content: `${client.i18n.get(client.language, "moderation", "give_12")}`});
+            }
+            let giveaway = client.giveawaysManager.giveaways.find((g) => g.messageId === args[0]);
+            if (!giveaway) {
+                return message.reply({ content: `${client.i18n.get(client.language, "moderation", "give_13", {
+                  gv_end: args.join(' ')
+                })}`});
+            }
+            client.giveawaysManager.pause(giveaway.messageId).then(() => {
+                    message.reply( { content: `${client.i18n.get(client.language, "moderation", "give_31")}` } );
+            }).catch((e) => {
+                console.log(e)
+            });
+       } else if (args[0].toLowerCase() === "unpause") {
+            args.shift();
+            if (!args[0]) {
+                return message.reply({content: `${client.i18n.get(client.language, "moderation", "give_12")}`});
+            };
+            let giveaway = client.giveawaysManager.giveaways.find((g) => g.prize === args.join(' ')) || client.giveawaysManager.giveaways.find((g) => g.messageId === args[0]);
+            if (!giveaway) {
+                return message.reply({ content: `${client.i18n.get(client.language, "moderation", "give_13", {
+                  gv_end: args.join(' ')
+                })}`});
+            };
+            client.giveawaysManager.unpause(giveaway.messageId).then(() => {
+                    message.reply( { content: `${client.i18n.get(client.language, "moderation", "give_32")}`});
+            }).catch((e) => {
+              console.log(e);
+            });
        };
     },
 };
