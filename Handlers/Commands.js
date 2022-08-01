@@ -38,12 +38,6 @@ module.exports = (client) => {
          botsCanWin: false,
          embedColor: database.colors.vang,
          reaction: "🎉",
-         lastChance: {
-           enabled: true,
-           content: `🛑 **Cơ hội cuối cùng để vào** 🛑`,
-           threshold: 5000,
-           embedColor: '#FF0000'
-        },
        },
      });
      readdir("./Modules/Giveaways", (_err, files) => {

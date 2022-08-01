@@ -1,6 +1,5 @@
 const { ButtonBuilder, EmbedBuilder, ActionRowBuilder, SelectMenuBuilder } = require("discord.js");
 const name = require("../../Modules/Includes/commands/path");
-const messages = require("../../Modules/Giveaways/message");
 const ms  = require("ms");
 module.exports = {
     name: name.parse(__filename).name,
@@ -84,20 +83,44 @@ module.exports = {
                 prize = response4;
                 collector4.stop(msg.edit((`${client.i18n.get(client.language, "moderation", "give_11", {
                   gv_prize: prize,
-                  gv_channel: gv_channel,
-                  gv_time: ms(time, { long: true }),
+                  gv_channel: channel,
+                  gv_time: ms(time, {
+                  long: true
+                  }),
                   gv_winnersCount: winnersCount
                 })}`)));
                       await collect.delete();
                       await collect2.delete();
                       await collect3.delete();
                       await collect4.delete();
+                      const giveawayss = {
+                         "everyoneMention": false,
+                         "hostedBy": true
+                      };
                       client.giveawaysManager.start(channel, {
                         duration: parseInt(time),
-                        prize: prize,
-                        hostedBy: messages.hostedBy ? message.author : null,
+                        prize: `Giải thưởng: ${prize}`,
+                        hostedBy: message.author,
                         winnerCount: parseInt(winnersCount),
-                        messages
+                        thumbnail: `${database.avatar}`,
+                        lastChance: {
+                          enabled: true,
+                          content: `🛑 **Cơ hội cuối cùng để vào** 🛑`,
+                          threshold: 50000,
+                          embedColor: '#FF0000'
+                        },
+                        messages: {
+                          giveaway: (giveawayss.everyoneMention ? "@everyone\n\n" : "") + "🎉 **GIVEAWAY** 🎉",
+                          giveawayEnded: (giveawayss.everyoneMention ? "@everyone\n\n" : "") + "🎉 **GIVEAWAY ENDED** 🎉",
+                          drawing: `Kết thúc sau: **{timestamp}**`,
+                          inviteToParticipate: `Phản ứng với 🎉 để tham gia!`,
+                          winMessage: "\`Xin chúc mừng bạn:\` {winners}!\n\`Bạn đã thắng:\` **{this.prize}**!",
+                          embedFooter: "Giveaways",
+                          noWinner: "\`\`\`\nGiveaway bị hủy, không có người tham gia hợp lệ\n\`\`\`",
+                          hostedBy: "Tổ chức bởi: {this.hostedBy}",
+                          winners: "người chiến thắng",
+                          endedAt: "Đã kết thúc lúc"
+                        },
                       });
                     });
                 });
