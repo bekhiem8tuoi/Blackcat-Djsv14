@@ -1,5 +1,5 @@
 # Giveaways 
-give_0: "`start: start giveaway\nend: end giveaway\nlist: show list giveaway`"
+give_0: "`start: start giveaway\nend: end giveaway\nlist: show list giveaway\npause: to pause the giveaway\nunpause: to continue the giveaway`"
 give_1: "🎉 OK! Let's set up your giveaway! First, which channel would you like to give the giveaway on?\n\nYou can cancel this giveaway by entering `cancel` in chat"
 give_2: "Looks like we've met for a while! 🕖"
 give_3: "💥 Grab our luck!\nYou took too long to decide!\nUse `start` again to start a new giveaway!\nTry to respond within **30 seconds** this time"
