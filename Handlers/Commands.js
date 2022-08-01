@@ -1,8 +1,6 @@
 const ascii = require('../Modules/Includes/commands/cmds_log');
-const { GiveawaysManager } = require("discord-giveaways");
 const database = require("../Modules/Json/database.json");
 const { EmbedBuilder } = require("discord.js")
-const database = require("../Modules/Json/database.json");
 let table = new ascii('BlackCat - commands');
 table.setHeading("Tên file", "Tình trạng");
 const { readdirSync } = require("fs");
@@ -34,6 +32,7 @@ module.exports = (client) => {
     /**
      **  Giveaway create
     **/
+    const { GiveawaysManager } = require("discord-giveaways");
     const mongoose = require('mongoose');
     const giveaways = new mongoose.Schema({
         messageId: String,
@@ -118,6 +117,7 @@ module.exports = (client) => {
          reaction: "🎉",
        },
     });
+  
     client.giveawaysManager.on("giveawayEnded", (giveaway, winners) => {
         winners.forEach((member) => {
            member.send({ embeds: [new EmbedBuilder()
@@ -135,7 +135,92 @@ module.exports = (client) => {
           ]}).catch(e => {});
         });
     });
+  
     client.giveawaysManager.on("giveawayReactionRemoved", (giveaway, member, reaction) => {
-          console.log(`${member.user.tag} unreact to giveaway #${giveaway.messageId} (${reaction.emoji.name})`);
+        return member.send({ embeds: [new EmbedBuilder()
+           .setTimestamp()
+           .setTitle(`${client.i18n.get(client.language, "moderation", "give_49")}`)
+           .setColor(database.colors.vang)
+           .setDescription(`${client.i18n.get(client.language, "moderation", "give_51", {
+             give_511: giveaway.guildId,
+             give_512: giveaway.channelId,
+             give_513: giveaway.messageId,
+             give_514: giveaway.prize 
+            })}`)
+           .setFooter({ text: `${client.i18n.get(client.language, "moderation", "give_50" )}`})
+        ]}).catch(e => {});
+    });
+  
+    client.giveawaysManager.on("giveawayReactionAdded", (giveaway, reactor, messageReaction) => {
+    let approved =  new EmbedBuilder()
+          .setTimestamp()
+          .setColor(database.colors.vang)
+          .setTitle("hello hello hello")
+          .setDescription("success"/*`${client.i18n.get(client.language, "moderation", "give_52", {
+              give_521: giveaway.guildId,
+              give_522: giveaway.channelId,
+              give_523: giveaway.messageId
+          })}`*/)
+          .setFooter({ text: `${database.name}`, iconURL: `${database.avatar}`})
+          .setTimestamp()
+   let denied =  new EmbedBuilder()
+          .setTimestamp()
+          .setColor(database.colors.vang)
+          /*
+          .setTitle(`${client.i18n.get(client.language, "moderation", "give_53")}`)
+          .setDescription(`${client.i18n.get(client.language, "moderation", "give_54", {
+             give_541: giveaway.guildId,
+             give_542: giveaway.channelId,
+             give_543: giveaway.messageId
+          })}`)
+          */
+          .setFooter({ text: `${database.name}`, iconURL: `${database.avatar}`})
+    let client = messageReaction.message.client
+    if (reactor.user.bot) return;
+    if(giveaway.extraData) {
+      if (giveaway.extraData.server !== "null") {
+        try { 
+            client.guilds.cache.get(giveaway.extraData.server).members.fetch(reactor.id)
+        return reactor.send({ embeds: [approved] });
+        } catch(e) {
+          messageReaction.users.remove(reactor.user);
+          return reactor.send({ embeds: [denied]
+          }).catch(e => {})
+        };
+      };
+      if (giveaway.extraData.role !== "null" && !reactor.roles.cache.get(giveaway.extraData.role)){ 
+        messageReaction.users.remove(reactor.user);
+        return reactor.send({ embeds: [denied]
+        }).catch(e => {});
+      };
+      return reactor.send({ embeds: [approved]
+      }).catch(e => {});
+    } else {
+        return reactor.send({ embeds: [approved]
+        }).catch(e => {});
+    };
+    });
+  
+    client.giveawaysManager.on("giveawayRerolled", (giveaway, winners) => {
+      winners.forEach((member) => {
+        member.send({ embeds: [new EmbedBuilder()
+          .setTitle(`${client.i18n.get(client.language, "moderation", "give_55")}`)
+          .setColor(database.colors.vang)
+          .setDescription(`${client.i18n.get(client.language, "moderation", "give_56", {
+            give_561: member.user,
+            give_562: giveaway.guildId,
+            give_563: giveaway.channelId,
+            give_564: giveaway.messageId,
+            give_565: giveaway.prize
+          })}`)
+          .setTimestamp()
+          .setFooter({ text: `${database.name}`, iconURL: `${database.avatar}`})
+        ]}).catch(e => {});
+      });
+    });
+  
+    client.giveawaysManager.on("endedGiveawayReactionAdded", (member, reaction) => {
+      reaction.users.remove(member.user);
+      member.send(`**Ôi, hỏng! Có vẻ như giveaway đó đã kết thúc!**`).catch(e => {})
     });
 };

@@ -46,11 +46,16 @@ give_43: ":x: Bạn phải đề cập đến một kênh hợp lệ!"
 give_44: ":x: Bạn phải chỉ định thời hạn hợp lệ!"
 give_45: ":x: Bạn phải chỉ định một số lượng người chiến thắng hợp lệ!"
 give_46: ":x: Bạn phải chỉ định một giải thưởng hợp lệ!"
-
-
 give_47: "🎁 Xin chúc mừng người may mắn!"
 give_48: "xin chào %{give_481}\n Tôi nghe nói rằng bạn đã thắng **[[Giveaway này]](https://discord.com/channels/%{give_482}/%{give_483}/%{give_484})**\n Bạn đã dành được: **%{give_485}!**\nNhắn tin trực tiếp cho người tổ chức để nhận giải thưởng của bạn!!"
-
+give_49: "❓ Chờ đã, bạn vừa loại bỏ phản ứng khỏi một giveaway?"
+give_50: "Nghĩ rằng đó là một sai lầm? Hãy phản ứng lại!"
+give_51: "Mục nhập của bạn vào [Giveaway này](https://discord.com/channels/%{give_511}/%{give_512}/%{give_513}) đã được ghi lại nhưng bạn không phản ứng, vì bạn không cần **%{give_514}** Tôi sẽ phải chọn một người khác 😭"
+give_52: "Mục nhập của bạn vào [Giveaway này](https://discord.com/channels/%{give_521}/%{give_522}/%{give_523}) đã được chấp nhận!"
+give_53: ":x: Mục nhập bị Từ chối | Không tìm thấy và trả lại mục nhập cơ sở dữ liệu!"
+give_54: "Mục nhập của bạn vào [Giveaway này](https://discord.com/channels/%{give_541}/%{give_542}/%{give_543}) đã bị từ chối, vui lòng xem lại các yêu cầu đối với giveaway một cách chính xác."
+give_55: "🎁 Đi thôi! Chúng tôi có một người chiến thắng mới"
+give_56: "xin chào %{give_561}\nTôi nghe nói rằng máy chủ lưu trữ được cuộn lại và bạn đã thắng **[[Giveaway này]](https://discord.com/channels/%{give_562}/%{give_563}/%{give_564})**\nBạn đã giành được: **%{give_565}!**\nNhắn tin trực tiếp cho người tổ chức để nhận giải thưởng của bạn!!"
 #########
 ADMINISTRATOR: "**bạn không thể sử dụng, chỉ admin mới có thể sử dụng lệnh này**"
 sayraloi: "sảy ra lỗi"
