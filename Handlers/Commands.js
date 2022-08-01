@@ -33,7 +33,7 @@ module.exports = (client) => {
      **  Giveaway create
     **/
     const mongoose = require('mongoose');
-const giveaways = new mongoose.Schema({
+    const giveaways = new mongoose.Schema({
         messageId: String,
         channelId: String,
         guildId: String,
@@ -110,7 +110,6 @@ const giveaways = new mongoose.Schema({
         }
     };
     client.giveawaysManager = new GiveawayManagerWithOwnDatabase(client, {
-       storage: "./Modules/Json/giveaways.json",
        default: {
          botsCanWin: false,
          embedColor: database.colors.vang,
@@ -124,5 +123,5 @@ const giveaways = new mongoose.Schema({
          let eventName = file.split(".")[0];
          client.giveawaysManager.on(eventName, (...file) => event.execute(...file, client)), delete require.cache[require.resolve(`../Modules/Giveaways/${file}`)];
        });
-     });
+    });
 };

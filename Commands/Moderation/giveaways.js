@@ -4,7 +4,7 @@ const ms  = require("ms");
 module.exports = {
     name: name.parse(__filename).name,
     usage: `${name.parse(__filename).name}`,
-    aliases: ["gv", ""], // lệnh phụ
+    aliases: ["gv", "giveaway"], // lệnh phụ
     description: "Giveaway start", // mô tả lệnh
     userPerms: ["Administrator", "ManageMessages"], // Administrator, ....
     owner: false, //: tắt // true : bật
@@ -14,7 +14,7 @@ module.exports = {
     if(!args[0]) return message.reply({ embeds: [new EmbedBuilder()
         .setDescription(`${client.i18n.get(client.language, "moderation", "give_0")}`)
     ]});
-    if(args[0].toLowerCase() === "start"){
+    if(args[0].toLowerCase() === "create"){
         let time = "";
         let winnersCount;
         let prize = "";
@@ -99,33 +99,33 @@ module.exports = {
                       };
                       client.giveawaysManager.start(channel, {
                         duration: parseInt(time),
-                        prize: `Giải thưởng: ${prize}`,
+                        prize: `${client.i18n.get(client.language, "moderation", "give_27")} ${prize}`,
                         hostedBy: message.author,
                         winnerCount: parseInt(winnersCount),
                         thumbnail: `${database.avatar}`,
                         lastChance: {
                           enabled: true,
-                          content: `🛑 **Cơ hội cuối cùng để vào** 🛑`,
+                          content: `🛑 **${client.i18n.get(client.language, "moderation", "give_33")}** 🛑`,
                           threshold: 50000,
                           embedColor: '#FF0000'
                         },
                         pauseOptions: {
                           isPaused: false,
-                          content: '⏸️ **GIVEAWAY NÀY ĐÃ TẠM DỪNG!** ⏸️',
+                          content: '⏸️ **${client.i18n.get(client.language, "moderation", "give_34")}** ⏸️',
                           unPauseAfter: null,
                           embedColor: '#FFFF00'
                         },
                         messages: {
                           giveaway: (giveawayss.everyoneMention ? "@everyone\n\n" : "") + "🎉 **GIVEAWAY** 🎉",
                           giveawayEnded: (giveawayss.everyoneMention ? "@everyone\n\n" : "") + "🎉 **GIVEAWAY ENDED** 🎉",
-                          drawing: `Kết thúc sau: **{timestamp}**`,
-                          inviteToParticipate: `Phản ứng với 🎉 để tham gia!`,
-                          winMessage: "\`Xin chúc mừng bạn:\` {winners}!\n\`Bạn đã thắng:\` **{this.prize}**!",
+                          drawing: `${client.i18n.get(client.language, "moderation", "give_35")}`,
+                          inviteToParticipate: `${client.i18n.get(client.language, "moderation", "give_36")}`,
+                          winMessage: `${client.i18n.get(client.language, "moderation", "give_37")}`,
                           embedFooter: "Giveaways",
-                          noWinner: "\`\`\`\nGiveaway bị hủy, không có người tham gia hợp lệ\n\`\`\`",
-                          hostedBy: "Tổ chức bởi: {this.hostedBy}",
-                          winners: "người chiến thắng",
-                          endedAt: "Đã kết thúc lúc"
+                          noWinner: `${client.i18n.get(client.language, "moderation", "give_38")}`,
+                          hostedBy: `${client.i18n.get(client.language, "moderation", "give_39")}`,
+                          winners: `${client.i18n.get(client.language, "moderation", "give_40")}`,
+                          endedAt: `${client.i18n.get(client.language, "moderation", "give_41")}`
                         },
                       });
                     });
@@ -268,6 +268,62 @@ module.exports = {
             }).catch((e) => {
               console.log(e);
             });
+       } else if (args[0].toLowerCase() === "start") {
+           args.shift();
+           let giveawayChannel = message.mentions.channels.first();
+           if (!giveawayChannel) {
+                 return message.reply(`${client.i18n.get(client.language, "moderation", "give_43")}`);
+           };
+
+           let giveawayDuration = args[1];
+           if (!giveawayDuration || isNaN(ms(giveawayDuration))) {
+                 return message.reply(`${client.i18n.get(client.language, "moderation", "give_44")}`);
+           };
+           let giveawayNumberWinners = parseInt(args[2]);
+           if (isNaN(giveawayNumberWinners) || parseInt(giveawayNumberWinners) <= 0) {
+                  return message.reply(`${client.i18n.get(client.language, "moderation", "give_45")}`);
+           };
+
+           let giveawayPrize = args.slice(3).join(" ");
+           if (!giveawayPrize) {
+                  return message.reply(`${client.i18n.get(client.language, "moderation", "give_46")}`);
+           };
+           const giveawayss = {
+                 "everyoneMention": false,
+                 "hostedBy": true
+           };
+           await client.giveawaysManager.start(giveawayChannel, {
+                        duration: ms(giveawayDuration),
+                        prize: `${client.i18n.get(client.language, "moderation", "give_27")} ${giveawayPrize}`,
+                        hostedBy: message.author,
+                        winnerCount: parseInt(giveawayNumberWinners),
+                        thumbnail: `${database.avatar}`,
+                        lastChance: {
+                          enabled: true,
+                          content: `🛑 **${client.i18n.get(client.language, "moderation", "give_33")}** 🛑`,
+                          threshold: 50000,
+                          embedColor: '#FF0000'
+                        },
+                        pauseOptions: {
+                          isPaused: false,
+                          content: '⏸️ **${client.i18n.get(client.language, "moderation", "give_34")}** ⏸️',
+                          unPauseAfter: null,
+                          embedColor: '#FFFF00'
+                        },
+                        messages: {
+                          giveaway: (giveawayss.everyoneMention ? "@everyone\n\n" : "") + "🎉 **GIVEAWAY** 🎉",
+                          giveawayEnded: (giveawayss.everyoneMention ? "@everyone\n\n" : "") + "🎉 **GIVEAWAY ENDED** 🎉",
+                          drawing: `${client.i18n.get(client.language, "moderation", "give_35")}`,
+                          inviteToParticipate: `${client.i18n.get(client.language, "moderation", "give_36")}`,
+                          winMessage: `${client.i18n.get(client.language, "moderation", "give_37")}`,
+                          embedFooter: "Giveaways",
+                          noWinner: `${client.i18n.get(client.language, "moderation", "give_38")}`,
+                          hostedBy: `${client.i18n.get(client.language, "moderation", "give_39")}`,
+                          winners: `${client.i18n.get(client.language, "moderation", "give_40")}`,
+                          endedAt: `${client.i18n.get(client.language, "moderation", "give_41")}`
+                        },
+           });
+           message.reply(`${client.i18n.get(client.language, "moderation", "give_42")} ${giveawayChannel}!`);
        };
     },
 };
