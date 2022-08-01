@@ -1,4 +1,5 @@
 module.exports = ( client ) => {
+  const name = require("../Includes/commands/path");
   const description = {
         name: name.parse(__filename).name,
         filename: name.parse(__filename).name,
