@@ -1,7 +1,9 @@
 const ascii = require('../Modules/Includes/commands/cmds_log');
-let table = new ascii('VinhBot - Commands');
+const { GiveawaysManager } = require("discord-giveaways");
+const database = require("../Modules/Json/database.json");
+let table = new ascii('BlackCat - commands');
 table.setHeading("Tên file", "Tình trạng");
-const { readdirSync } = require("fs");
+const { readdirSync, readdir } = require("fs");
 module.exports = (client) => {
     try{ 
         client.on("ready", () => {
@@ -27,4 +29,29 @@ module.exports = (client) => {
     } catch(err){
         console.log(err);
     };
+    /**
+     **  Giveaway create
+    **/
+    client.giveawaysManager = new GiveawaysManager(client, {
+       storage: "./Modules/Json/giveaways.json",
+       default: {
+         botsCanWin: false,
+         embedColor: database.colors.vang,
+         reaction: "🎉",
+         lastChance: {
+           enabled: true,
+           content: `🛑 **Cơ hội cuối cùng để vào** 🛑`,
+           threshold: 5000,
+           embedColor: '#FF0000'
+        },
+       },
+     });
+     readdir("./Modules/Giveaways", (_err, files) => {
+       files.forEach((file) => {
+         if (!file.endsWith(".js")) return;
+         const event = require(`../Modules/Giveaways/${file}`);
+         let eventName = file.split(".")[0];
+         client.giveawaysManager.on(eventName, (...file) => event.execute(...file, client)), delete require.cache[require.resolve(`../Modules/Giveaways/${file}`)];
+       });
+     });
 };
